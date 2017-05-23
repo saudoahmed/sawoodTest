@@ -1,23 +1,6 @@
-version: '2'
-services:
-  # mysql
-  db01:
-    build: .
-    ports:
-      - "3306:3306"
-    environment:
-    - MYSQL_USER=root
-    - MYSQL_ROOT_PASSWORD=123
-    - MYSQL_DATABASE=test
-    volumes:
-    - ./data/:/var/lib/mysql
-
-  # web
-  web01:
-    build: .
+  web:
+    build: ~/Desktop/sawoodtest/.
     ports:
       - "8080:80"
-    links:
-      - "db01:db01"
     volumes:
-      - ./test/:/var/www/html
+      - ~/Desktop/sawoodtest/test-project/:/var/www/html
