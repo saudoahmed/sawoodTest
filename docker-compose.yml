@@ -1,6 +1,7 @@
  web:
-    build: ~/Desktop/sawoodtest/.
-    ports:
-      - "8080:80"
-    volumes:
-      - ~/Desktop/sawoodtest/test-project/:/var/www/html
+  build: ./
+  ports:
+    - "8080:80"
+  volumes:
+    - ./test-project/:/var/www/html
+    #- /var/lib/mysql
