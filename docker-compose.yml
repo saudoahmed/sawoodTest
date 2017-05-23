@@ -5,6 +5,7 @@ services:
     build: .
     ports:
       - "3306:3306"
+      - "12345:22"
     environment:
     - MYSQL_USER=root
     - MYSQL_ROOT_PASSWORD=123
@@ -17,6 +18,7 @@ services:
     build: .
     ports:
       - "8080:80"
+      - "12346:22"
     links:
       - "db01:db01"
     volumes:
