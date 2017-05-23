@@ -22,4 +22,9 @@ docker-compose.yml　から　dockerfile run を　します。
 ```
 command:　docker-compose up 
 ```
+Test project は　データ　があります。
+test-project は　simple laravel の　プロジェクト desu
 
+Docker-compose.yml ファイル　に　volume 　のパスを自分のpcのパス書いてください。
+volumes:
+    - （./test-project/）:/var/www/html
