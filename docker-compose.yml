@@ -1,6 +1,32 @@
+<<<<<<< HEAD
   web:
     build: ~/Desktop/sawoodtest/.
     ports:
       - "8080:80"
+=======
+version: '2'
+services:
+  # mysql
+  db01:
+    build: .
+    ports:
+      - "3306:3306"
+      - "12345:22"
+    environment:
+    - MYSQL_USER=root
+    - MYSQL_ROOT_PASSWORD=123
+    - MYSQL_DATABASE=test
+    volumes:
+    - ./data/:/var/lib/mysql
+
+  # web
+  web01:
+    build: .
+    ports:
+      - "8080:80"
+      - "12346:22"
+    links:
+      - "db01:db01"
+>>>>>>> 14b90b5335a9da854e4c666c2f274d9fa83df100
     volumes:
       - ~/Desktop/sawoodtest/test-project/:/var/www/html
